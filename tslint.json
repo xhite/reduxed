@@ -1,0 +1,31 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "rules": {
+    "arrow-spacing": [ 1, { "before": true, "after": true } ],
+    "brace-style": [ 1, "1tbs", { "allowSingleLine": true } ],
+    "camelcase": [ 1, { "properties": "always" } ],
+    "default-case": 1,
+    "max-params": [ 1, 3 ],
+    "no-const-assign": 2,
+    "no-extra-semi": 1,
+    "no-shadow": [ 1, { "hoist": "all" } ],
+    "no-undefined": 1,
+    "no-var": 2,
+    "prefer-const": 2,
+    "prefer-spread": 2,
+    "quotes": [ 1, "single", "avoid-escape" ],
+    "semi": [ 1, "never" ],
+    "space-infix-ops": 1
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  }
+}

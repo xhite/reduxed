@@ -1,0 +1,39 @@
+{
+  "name": "@reduxed/tree",
+  "version": "0.0.1",
+  "description": "react-redux",
+  "main": "dist/build.commonjs.js",
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [],
+  "author": "Gregory Emirian <e.greg.bx@gmail.com>",
+  "dependencies": {
+    "fs-extra": "^4.0.1"
+  },
+  "devDependencies": {
+    "@types/core-js": "^0.9.42",
+    "@types/fs-extra": "^4.0.0",
+    "@types/jest": "^20.0.5",
+    "@types/node": "^8.0.19",
+    "@types/webpack": "^3.0.5",
+    "@types/webpack-merge": "^0.0.5",
+    "awesome-typescript-loader": "^3.2.2",
+    "jest": "^20.0.4",
+    "source-map-loader": "^0.2.1",
+    "ts-jest": "^20.0.7",
+    "ts-lint": "^4.5.1",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.4.2",
+    "webpack": "^3.4.1",
+    "webpack-merge": "^4.1.0"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "./node_modules/.bin/webpack --config lib/config/webpack.config.ts",
+    "build:dev": "./node_modules/.bin/webpack --config lib/config/webpack.config.ts --env dev",
+    "build:test": "./node_modules/.bin/webpack --config lib/config/webpack.config.ts --env test",
+    "script": "node ./dist/build.js",
+    "test": "jest --notify --config jest.json"
+  }
+}
