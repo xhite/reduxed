@@ -1,4 +1,7 @@
-import { Configuration } from 'webpack'
+import {
+  BannerPlugin,
+  Configuration
+} from 'webpack'
 
 import {
   optimize
@@ -35,10 +38,11 @@ const config: Configuration = {
   },
 
   plugins: [
-    new optimize.ModuleConcatenationPlugin()
+    new optimize.ModuleConcatenationPlugin(),
+    new BannerPlugin({ banner: '#!/usr/bin/env node', raw: true })
   ],
 
-  target: 'web'
+  target: 'node'
 
 }
 
