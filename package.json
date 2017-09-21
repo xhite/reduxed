@@ -1,14 +1,17 @@
 {
   "name": "@reduxed/tree",
-  "version": "0.0.1",
-  "description": "react-redux",
-  "main": "dist/build.commonjs.js",
+  "version": "0.0.2",
+  "description": "",
+  "main": "dist/build.js",
+  "bin": { "reduxed-tree": "dist/build.js" },
   "repository": {
-    "type": "git"
+    "type": "git",
+    "url": "https://github.com/xhite/reduxed-tree.git"
   },
+  "bugs": "https://github.com/xhite/reduxed-tree/issues",
   "keywords": [],
   "author": "Gregory Emirian <e.greg.bx@gmail.com>",
-  "dependencies": {
+  "peerDependencies": {
     "fs-extra": "^4.0.1"
   },
   "devDependencies": {
@@ -32,7 +35,6 @@
   "scripts": {
     "build": "./node_modules/.bin/webpack --config lib/config/webpack.config.ts",
     "build:dev": "./node_modules/.bin/webpack --config lib/config/webpack.config.ts --env dev",
-    "build:test": "./node_modules/.bin/webpack --config lib/config/webpack.config.ts --env test",
     "script": "node ./dist/build.js",
     "test": "jest --notify --config jest.json"
   }

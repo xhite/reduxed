@@ -1,1 +1,11 @@
-export { reducerFile } from './reducer'
+import {
+  actionsFile,
+  indexFile,
+  reducerFile
+} from './structure'
+
+export default [
+  actionsFile,
+  reducerFile,
+  indexFile
+]

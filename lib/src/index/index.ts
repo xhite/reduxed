@@ -1,1 +1,0 @@
-export { indexFile } from './structure'

@@ -13,8 +13,8 @@ const createImported = (imported: Array<Import>): string =>
   imported.map(({ members, moduleName }: Import): string => `import {\n${ members.join(',\n') }\n} from '${ moduleName }'` )
     .join('\n')
 
-export const createFile = ({ data, imported, name }: NamedFile): SimpleFile => ({
-  path: findFile(name),
+export const createFile = ({ data, imported = [], name, ext }: NamedFile): SimpleFile => ({
+  path: findFile(name, ext),
   data: `${ createImported(imported) }\n${ data }`
 })
 

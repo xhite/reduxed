@@ -1,5 +1,9 @@
 # @reduxed/tree
 
+Creates React component and Redux state reducer files
+
+More features to come
+
 Part of @reduxed  utilities for Redux.
 
 ### Table of Contents
@@ -23,7 +27,12 @@ The [npm](https://www.npmjs.com) package provides a [CommonJS](http://webpack.gi
 
 # Usage
 
+Adding a new reducer to your existing tree:
+```
+$ ./node_modules/.bin/reduxed-tree <relative path to reducer> <name> --reducer
+```
+
 Adding a new component to your existing tree:
 ```
-$ @reduxed/tree <relative path to component> <name>
+$ ./node_modules/.bin/reduxed-tree <relative path to component> <name>
 ```

@@ -9,19 +9,13 @@ import { smart } from 'webpack-merge'
 
 import sharedConfig from '../shared/webpack.config'
 
-const targetFormats: Array<any> = [
-  'amd',
-  'commonjs',
-  'umd'
-]
-
-const config: Array<Configuration> = targetFormats.map((format: any): Configuration => smart(sharedConfig, {
+const config: Configuration = smart(sharedConfig, {
 
   output: {
     path: dstPath,
-    library: '@redux-tree',
-    libraryTarget: format,
-    filename: `build.${format}.js`
+    library: 'ReduxedTree',
+    libraryTarget: 'commonjs2',
+    filename: `build.min.js`
   },
 
   plugins: [
@@ -34,6 +28,6 @@ const config: Array<Configuration> = targetFormats.map((format: any): Configurat
     })
   ]
 
-}))
+})
 
 export default config

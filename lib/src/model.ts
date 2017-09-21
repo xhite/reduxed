@@ -8,8 +8,9 @@ interface File {
 }
 
 export interface NamedFile extends File {
-  imported: Array<Import>
+  imported?: Array<Import>
   name: string
+  ext?: string
 }
 
 export interface SimpleFile extends File {

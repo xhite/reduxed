@@ -4,21 +4,43 @@ import {
 import { SimpleFile } from '../model'
 
 export const componentFile: SimpleFile = createFile({
-  name: 'reducer',
+  ext: 'jsx',
+  name: 'component',
+  data: `
+export default ({ input, output }) =>
+  <div></div>
+`
+})
+
+export const inputFile: SimpleFile = createFile({
+  name: 'input',
+  data: `
+export default state => ({
+  })
+`
+})
+
+export const outputFile: SimpleFile = createFile({
+  name: 'output',
   imported: [
-    { members: [ 'handl' ], moduleName: './reducer' },
     { members: [], moduleName: './actions' }
   ],
   data: `
-import { handleActions } from 'redux-actions'
-
-import {
-} from './actions'
-
-const initialState = {
+export default {
 }
+`
+})
 
-export default handleActions({
-}, initialState)
-  `
+export const indexFile: SimpleFile = createFile({
+  name: 'index',
+  imported: [
+    { members: [ 'connect' ], moduleName: '@reduxed/actions' }
+  ],
+  data: `
+import mapStateToProps from './input'
+import mapDispatchToProps from './output'
+import Component from './component'
+
+export default connect(mapStateToProps, mapDispatchToProps)(Component)
+`
 })
