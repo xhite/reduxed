@@ -15,7 +15,7 @@ const config: Configuration = smart(sharedConfig, {
     path: dstPath,
     library: 'ReduxedTree',
     libraryTarget: 'commonjs2',
-    filename: `build.min.js`
+    filename: 'build.min.js'
   },
 
   plugins: [

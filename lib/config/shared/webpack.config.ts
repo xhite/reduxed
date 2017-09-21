@@ -15,10 +15,6 @@ const config: Configuration = {
 
   entry: findPath('main'),
 
-  externals: [
-    'fs-extra'
-  ],
-
   resolve: {
     extensions: [ '.ts', '.js', '.json' ]
   },

@@ -22,9 +22,6 @@ export default state => ({
 
 export const outputFile: SimpleFile = createFile({
   name: 'output',
-  imported: [
-    { members: [], moduleName: './actions' }
-  ],
   data: `
 export default {
 }
