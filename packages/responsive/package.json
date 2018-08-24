@@ -1,0 +1,56 @@
+{
+  "name": "@reduxed/responsive",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/reduxed-responsive.js",
+  "module": "src/index.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xhite/reduxed.git"
+  },
+  "bugs": "https://github.com/xhite/reduxed/issues",
+  "keywords": [],
+  "author": "Gregory Emirian <greg@emirian.fr>",
+  "peerDependencies": {
+    "ramda": "^0.25.0",
+    "react": "^16.4.0",
+    "redux": "^4.0.0",
+    "redux-actions": "^2.6.0",
+    "reselect": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-rc.2",
+    "@types/core-js": "^2.5.0",
+    "@types/jest": "^23.3.1",
+    "@types/node": "^10.7.1",
+    "@types/react-dom": "^16.0.6",
+    "@types/react-redux": "^6.0.5",
+    "@types/redux-actions": "^2.3.0",
+    "@types/webpack": "^4.4.10",
+    "@types/webpack-merge": "^4.1.3",
+    "awesome-typescript-loader": "^5.2.0",
+    "jest": "^23.5.0",
+    "react-redux": "^5.0.7",
+    "redux-actions": "^2.6.1",
+    "reselect": "^4.0.0-beta.1",
+    "source-map-loader": "^0.2.4",
+    "ts-jest": "^23.1.4",
+    "ts-lint": "^4.5.1",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.0.1",
+    "webpack": "^4.17.1",
+    "webpack-command": "^0.4.1",
+    "webpack-merge": "^4.1.4"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn webpack --require ts-node/register --config config/prod/webpack.config.ts",
+    "build:dev": "yarn webpack --require ts-node/register --config config/dev/webpack.config.ts",
+    "prepublishOnly": "yarn build:dev",
+    "test": "jest --notify --config jest.json"
+  },
+  "typescript": {
+    "definition": "definitions/index"
+  },
+  "typings": "definitions/index"
+}
