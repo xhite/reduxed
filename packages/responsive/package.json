@@ -1,6 +1,6 @@
 {
   "name": "@reduxed/responsive",
-  "version": "0.1.2",
+  "version": "0.1.0",
   "description": "",
   "main": "dist/reduxed-responsive.js",
   "module": "src/index.ts",

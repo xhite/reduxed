@@ -1,6 +1,6 @@
 {
   "name": "@reduxed/actions",
-  "version": "0.1.2",
+  "version": "0.1.0",
   "description": "",
   "main": "dist/reduxed-actions.js",
   "module": "src/index.ts",
