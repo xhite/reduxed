@@ -1,10 +1,6 @@
 import { createActions } from 'redux-actions'
 
-const names = [
-  'CHANGE_DIMENSIONS'
-]
-
-const creators = createActions(...names)
+const creators = createActions('CHANGE_DIMENSIONS')
 
 export const {
   changeDimensions

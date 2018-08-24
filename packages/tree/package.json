@@ -1,6 +1,6 @@
 {
   "name": "@reduxed/tree",
-  "version": "0.1.0",
+  "version": "0.0.4",
   "description": "",
   "main": "dist/reduxed-tree.js",
   "module": "src/main.ts",
@@ -45,5 +45,8 @@
   },
   "dependencies": {
     "ramda": "^0.25.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

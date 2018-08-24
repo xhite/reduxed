@@ -2,9 +2,10 @@ import { Configuration } from 'webpack'
 import { smart } from 'webpack-merge'
 
 import sharedConfig from '../shared/webpack.config'
+import { dstPath } from '../shared/path'
 
 
-const config: Array<Configuration> = smart(sharedConfig, {
+const config: Configuration = smart(sharedConfig, {
 
   mode: 'production',
 
@@ -18,6 +19,13 @@ const config: Array<Configuration> = smart(sharedConfig, {
         }
       }
     ]
+  },
+
+  output: {
+    filename: 'reduxed-responsive.js',
+    library: 'reduxedResponsive',
+    libraryTarget: 'umd',
+    path: dstPath
   }
 
 })

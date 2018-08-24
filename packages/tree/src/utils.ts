@@ -1,6 +1,4 @@
-import {
-  outputFile
-} from 'fs-extra'
+import { outputFile } from 'fs-extra'
 
 import { findFile } from './paths'
 import {
@@ -10,7 +8,7 @@ import {
 } from './model'
 
 const createImported = (imported: Array<Import>): string =>
-  imported.map(({ members, moduleName }: Import): string => `import {\n${ members.join(',\n') }\n} from '${ moduleName }'` )
+  imported.map(({ members, moduleName }: Import): string => `import {\n${ members.join(',\n') }\n} from '${ moduleName }'`)
     .join('\n')
 
 export const createFile = ({ data, imported = [], name, ext }: NamedFile): SimpleFile => ({
@@ -18,5 +16,7 @@ export const createFile = ({ data, imported = [], name, ext }: NamedFile): Simpl
   data: `${ createImported(imported) }\n${ data }`
 })
 
-export const writeFile = ({ path, data }: SimpleFile): Promise<string> => outputFile(path, data)
-  .then(() => console.info(`${ path } created`) || path)
+export const writeFile = ({ path, data }: SimpleFile): Promise<void> =>
+  outputFile(path, data)
+    .then(() => console.info(`${ path } created`))
+    .catch(error => console.error(error))

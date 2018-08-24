@@ -1,23 +1,44 @@
-import { ActionCreator } from 'react-redux'
 import {
-  ActionCreatorsMapObject,
-  bindActionCreators
+  clone,
+  identity,
+  map,
+  reduce,
+  values
+} from 'ramda'
+import {
+  ActionCreator,
+  ActionCreatorsMapObject
 } from 'redux'
 import {
-  combineActions
+  Action,
+  ActionFunctionAny,
+  combineActions,
+  createActions
 } from 'redux-actions'
 
-const stringify = creators => Object.keys(creators).reduce((acc, key) => {
-  creators[key].toString = () => creators[key]().type
-  return  { ...acc, [key]: creators[key] }
-}, {})
+export const createWrapperActions = (name:  string, creators: ActionCreatorsMapObject): ActionFunctionAny<Action<any>> =>
+  createActions({
+    [name]: reduce(
+      (acc, creator: ActionCreator<any>) => ({
+        ...acc,
+        [creator().type]: [
+          payload => creator(payload).payload,
+          payload => creator(payload).meta
+        ]
+      }),
+      {}
+    )(values(creators))
+  })[name]
 
-export const createWrapperActions = (creators: ActionCreatorsMapObject, name:  string): ActionCreatorsMapObject =>
-  stringify(bindActionCreators(creators, (action: any) => ({ ...action, type: `${name}/${action.type}` })))
+export const createNestedActions = (name:  string, actionTypes: string[]): ActionFunctionAny<Action<any>> =>
+  createActions({
+    [name]: reduce(
+      (acc, actionType) => ({
+        ...acc,
+        [actionType]: identity
+      }),
+      {}
+    )(actionTypes)
+  })[name]
 
-export const combineWrapperActions = (creators: ActionCreatorsMapObject): string =>
-  combineActions(
-    ...Object.keys(creators)
-      .map((id: string) => creators[id])
-      .map((creator: ActionCreator<any>) => creator)
-  )
+export const combineWrapperActions = (creators: ActionFunctionAny<Action<any>>): any => combineActions(...values(creators))

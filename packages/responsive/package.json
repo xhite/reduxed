@@ -1,6 +1,6 @@
 {
   "name": "@reduxed/responsive",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "",
   "main": "dist/reduxed-responsive.js",
   "module": "src/index.ts",
@@ -52,5 +52,8 @@
   "typescript": {
     "definition": "definitions/index"
   },
-  "typings": "definitions/index"
+  "typings": "definitions/index",
+  "publishConfig": {
+    "access": "public"
+  }
 }

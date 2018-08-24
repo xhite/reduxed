@@ -1,6 +1,6 @@
 {
   "name": "@reduxed/actions",
-  "version": "0.1.0",
+  "version": "0.0.10",
   "description": "",
   "main": "dist/reduxed-actions.js",
   "module": "src/index.ts",
@@ -53,5 +53,8 @@
   "typescript": {
     "definition": "definitions/index"
   },
-  "typings": "definitions/index"
+  "typings": "definitions/index",
+  "publishConfig": {
+    "access": "public"
+  }
 }

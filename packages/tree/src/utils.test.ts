@@ -1,3 +1,5 @@
+import { outputFile } from 'fs-extra'
+
 import {
   NamedFile,
   SimpleFile
@@ -43,12 +45,13 @@ test('writeFile', () => {
     data: ''
   }
   const spy = jest.spyOn(console, 'info')
-  writeFile(file).then(path => {
-    expect(path).toBe('path/to/file')
-    expect(spy).toHaveBeenCalled()
-    spy.mockReset()
-    spy.mockRestore()
-  })
+  outputFile.mockResolvedValue()
+  writeFile(file)
+    .then(() => {
+      expect(spy).toHaveBeenCalled()
+      spy.mockReset()
+      spy.mockRestore()
+    })
 })
 
 test('hasOptions', () => {

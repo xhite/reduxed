@@ -1,7 +1,4 @@
-import {
-  Configuration,
-  optimize
-} from 'webpack'
+import { Configuration } from 'webpack'
 
 import {
   findPath

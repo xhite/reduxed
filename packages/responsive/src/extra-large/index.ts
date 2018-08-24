@@ -1,6 +1,4 @@
-import {
-  connect
-} from '@reduxed/actions'
+import { connect } from '../../../actions/src/component/lib'
 
 import mapStateToProps from './input'
 import mapDispatchToProps from './output'

@@ -13,7 +13,7 @@ export const reducerFile: SimpleFile = createFile({
 const initialState = {
 }
 
-export default handleActions({
+export const reducer = handleActions({
 }, initialState)
 `
 })

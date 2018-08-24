@@ -6,5 +6,5 @@ import { changeDimensions } from './actions'
 const initialState = {}
 
 export const reducer = handleActions({
-  [changeDimensions]: (state, { payload }) => ({ ...payload })
+  [changeDimensions.toString()]: (state, { payload }) => ({ ...payload })
 }, initialState)

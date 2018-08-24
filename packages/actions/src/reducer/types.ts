@@ -1,10 +1,11 @@
 import {
-  ActionCreatorsMapObject,
-} from 'redux'
-import { Reducer } from 'redux-actions'
+  Action,
+  ActionFunctionAny,
+  Reducer
+} from 'redux-actions'
 
 export interface ReducerActions {
-  actions: ActionCreatorsMapObject
+  actions: ActionFunctionAny<Action<any>>
   reducer: Reducer<any, any>
 }
 

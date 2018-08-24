@@ -1,3 +1,5 @@
 coverage
-dist
 node_modules
+packages/actions/dist
+packages/responsive/dist
+packages/tree/dist

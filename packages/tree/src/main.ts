@@ -3,15 +3,17 @@ import {
   hasOptions
 } from './paths'
 import { writeFile } from './utils'
-import reducerFiles from './reducer/index'
-import componentFiles from './component/index'
+import reducerFiles from './reducer'
+import componentFiles from './component'
 
-const writeReducerFiles = (): Array<Promise<string>> =>
+const writeReducerFiles = (): Array<Promise<void>> =>
   reducerFiles.map(writeFile)
 
-const writeComponentFiles = (): Array<Promise<string>> =>
+const writeComponentFiles = (): Array<Promise<void>> =>
   componentFiles.map(writeFile)
 
 const writeFiles = reducerOption ? writeReducerFiles : writeComponentFiles
 
-hasOptions && writeFiles()
+if (hasOptions) {
+  writeFiles()
+}

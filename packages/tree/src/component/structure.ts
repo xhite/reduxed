@@ -4,7 +4,6 @@ import {
 import { SimpleFile } from '../model'
 
 export const componentFile: SimpleFile = createFile({
-  ext: 'jsx',
   name: 'component',
   data: `
 export default ({ input: {} = {}, output: {} = {} }) =>
